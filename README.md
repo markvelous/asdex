@@ -1,4 +1,4 @@
-# Atomic SWap Awesome DEX
+# AWESOME ATOMIC SWAP DEX
 
 This is a demo with a basic UI to showcase the use of Atomic Swaps to build a functioning DEX.
 
