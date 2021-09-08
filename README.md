@@ -1,14 +1,10 @@
-# Remarkable Atomic DEX
+# Atomic SWap Awesome DEX
 
-This is a demo to showcase the use of Atomic Swaps to build a DEX.
+This is a demo with a basic UI to showcase the use of Atomic Swaps to build a functioning DEX.
 
-The project comprises the following:
+### Setting up
 
-- `/contracts/ontology` folder contains Ontology SC and unit tests for it
-- `/contracts/ethereum` folder contains Ethereum SC
-- `/frontend` folder contains simple frontend, that allows interacting with smart contracts mentioned above
-
-#### Setting up
+Install _Metamask_ extension and set it to the Ropsten testnet.
 
 ```
 cd frontend
@@ -17,28 +13,7 @@ npm start
 ```
 
 Access the app on `localhost:3000`.
-Before using the demo, please install _Metamask_ extension and set it to Ropsten testnet.
-
-#### Notes
-
-Frontend demo is not a fully-functional DEX, but rather a way to facilitate interaction with smart contracts in order to see, how atomic swaps work.
-
-Prototype interacts with Ontology SC
-(deployed to Ontology testnet on `14972f644a4c43a9e097ee55968f877ce799754d`)
-and Ethereum SC (deployed to Ropsten testnet on `0x6ad25cb063bc6ebbc7a0ed66cbb91aa4c7fad86e`).
-
-We've got 2 hardcoded users: Alice and Bob. Alice wants to sell some amount of ONT for ETH, and Bob wants to exchange his ETH to ONT.
-Private keys and addresses are located on `frontend/src/api/constants` in `users` object.
-Please, note, that you can use that users, but keep in mind, that they are not guaranteed to have sufficient balance of ETH and/or ONT.
-You are welcome to recharge those wallets, but it would be best to replace hardcoded data with your own test accounts.
-
-Demo provides _Check order data_ page, that lets checking state of the order.
-But it can also be handy to monitor what's going on with SC with testnet block explorers:
-
-- _Ontology:_ https://explorer.ont.io/contract/other/4d7599e77c878f9655ee97e0a9434c4a642f9714/10/1/testnet
-- _Ethererum:_ https://ropsten.etherscan.io/address/0x6ad25cb063bc6ebbc7a0ed66cbb91aa4c7fad86e
-
-#### Workflow instruction
+#### Workflow instruction - reproduced from [Apriorit](https://github.com/apriorit/atomic_swap_dex_demo)
 
 To initiate exchange switch to Alice and to go _Create order_ page.
 
@@ -49,15 +24,7 @@ The following message will appear:
 
 ![Create order page](screenshots/02.png)
 
-It is important to save this values, otherwise access to those locked ONT will be permanently lost.
-
-Let's assume that following data is safely stored by Alice:
-
-```
-Hashlock b9d2195fbd4b7a5812498d380b2275e4eb8b939920cc74288fa688f6e0849c93
-
-Secret 97feb4ac885c56dd4bbb454fc1dbb0175e5fe5e66e123d394e83bd357a2d04cf569298d625cbc9799a5db2296e912448
-```
+Save this values, otherwise access to the locked ONT will be permanently lost.
 
 Now it's time for Bob to respond to Alice's order.
 We assume that Bob knows hashlock and order details already (f.e. through using some public order book aggregator), but that is not significant in terms of our demo.
